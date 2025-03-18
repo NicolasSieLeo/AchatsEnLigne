@@ -10,6 +10,7 @@
         <form action="enregistrerMdp.php" method="post">
             <input type="hidden" name="courriel" value="<?php echo htmlspecialchars($_GET['courriel']); ?>">
             <input type="hidden" name="idm" value="<?php echo htmlspecialchars($_GET['idm']); ?>">
+            <input type="hidden" name="mdp"value="<?php echo htmlspecialchars($_GET['pass']); ?>">
             <label for="pass">Mot de passe</label>
             <input type="password" name="pass" placeholder="Mot de passe" required> <br  />
             <label for="confirmerpass">Confirmer le mot de passe</label>

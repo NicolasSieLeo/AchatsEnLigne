@@ -13,7 +13,7 @@ courriel VARCHAR(127)
 CREATE TABLE connexion (
 idm int PRIMARY KEY,
 courriel VARCHAR(256) NOT NULL,
-pass VARCHAR (20) NOT NULL,
+pass VARCHAR (60) NOT NULL,
 role ENUM('A', 'M', 'E') NOT NULL DEFAULT 'A',
 statut ENUM('A', 'I') NOT NULL DEFAULT 'A',
 CONSTRAINT connexion_idm_FK FOREIGN KEY (idm) REFERENCES membres(idm)

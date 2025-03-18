@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inscription</title>
-  <link href="/AchatsEnLigne/client/utilitaires/bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../client/utilitaires/bootstrap-5.3.3-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link rel="stylesheet" href="/AchatsEnLigne/client/css/style.php">
+  <link rel="stylesheet" href="../../client/css/style.php">
 
 
 
@@ -14,8 +14,8 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    const passwordInput = document.querySelector("#mdp");
-    const confirmPasswordInput = document.querySelector("#confirm_mdp");
+    const passwordInput = document.querySelector("#pass");
+    const confirmPasswordInput = document.querySelector("#confirm_pass");
     const submitButton = document.querySelector("form button[type='submit']");
     
     // Création du message d'erreur sous le champ mot de passe
@@ -107,17 +107,17 @@ confirmPasswordInput.addEventListener("input", function() {
       <form action="enregistrerMembre.php" method="post">
         <div class="mb-3">
           <label for="nom" class="form-label">Nom</label>
-          <input type="text" class="form-control" name="nom" placeholder="Entrez votre nom" required>
+          <input type="text" class="form-control" name="nom" id="nom" placeholder="Entrez votre nom" required>
         </div>
         <div class="mb-3">
           <label for="prenom" class="form-label">Prénom</label>
-          <input type="text" class="form-control" name="prenom" placeholder="Entrez votre prénom" required>
+          <input type="text" class="form-control" name="prenom" id="prenom" placeholder="Entrez votre prénom" required>
         </div>
 
        
         <div class="mb-3">
           <label for="courriel" class="form-label">Courriel</label>
-          <input type="email" class="form-control" name="courriel" placeholder="Entrez votre courriel" required>
+          <input type="email" class="form-control" name="courriel" id="courriel" placeholder="Entrez votre courriel" required>
         </div>
 
        
@@ -126,57 +126,42 @@ confirmPasswordInput.addEventListener("input", function() {
           <div class="d-flex gap-3">
             <div class="form-check">
               <input class="form-check-input" type="radio" name="sexe" id="sexeM" value="M">
-              <label class="form-check-label" for="sexeM">Masculin</label>
+              <label class="form-check-label" for="sexeM" id="sexeM">Masculin</label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="sexe" id="sexeF" value="F">
-              <label class="form-check-label" for="sexeF">Féminin</label>
+              <label class="form-check-label" for="sexeF" id="sexeF">Féminin</label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="sexe" id="sexeAutre" value="N">
-              <label class="form-check-label" for="sexeAutre">Autre</label>
+              <label class="form-check-label" for="sexeAutre" id="sexeAutre" >Autre</label>
             </div>
           </div>
         </div>
 
         <div class="mb-3">
           <label for="datenaissance" class="form-label">Date de naissance</label>
-          <input type="date" class="form-control" name="datenaissance" required>
+          <input type="date" class="form-control" name="datenaissance" id="datenaissance" required>
         </div>
         <div class="mb-3">
-            <label for="mdp" class="form-label">Mot de passe</label>
-            <input type="password" class="form-control" name="mdp" id="mdp" placeholder="Entrez un mot de passe" required>
+            <label for="pass" class="form-label">Mot de passe</label>
+            <input type="password" class="form-control" name="pass" id="pass" placeholder="Entrez un mot de passe" required>
         </div>
 
         <div class="mb-3">
-            <label for="confirm_mdp" class="form-label">Confirmation du mot de passe</label>
-            <input type="password" class="form-control" name="confirm_mdp" id="confirm_mdp" placeholder="Confirmez le mot de passe" required>
+            <label for="confirm_pass" class="form-label">Confirmation du mot de passe</label>
+            <input type="password" class="form-control" name="confirm_pass" id="confirm_pass" placeholder="Confirmez le mot de passe" required>
         </div>
 
-        <button type="submit" class="btn btn-primary w-100">
+        <button type="submit" name="ok" class="btn btn-primary w-100">
           <i class="fa-solid fa-user-plus"></i> S'inscrire
         </button>
       </form>
     </div>
   </div>
-  <footer class="text-center py-4" style="background-color: #f5f5dc;">
-  <div class="container-fluid">
-    <h5 class="mb-1">Magasin Belle Bottines</h5>
-    <p class="mb-1">Adresse : Montréal, Rue des Ormes, H3R1Z3</p>
-    <p class="mb-2">Téléphone : (514) 123-4567</p>
-    <div>
-      <a href="https://facebook.com" target="_blank" class="text-decoration-none mx-2">
-        <i class="fa-brands fa-facebook fa-lg"></i>
-      </a>
-      <a href="https://instagram.com" target="_blank" class="text-decoration-none mx-2">
-        <i class="fa-brands fa-instagram fa-lg"></i>
-      </a>
-      <a href="https://twitter.com" target="_blank" class="text-decoration-none mx-2">
-        <i class="fa-brands fa-twitter fa-lg"></i>
-      </a>
-    </div>
-  </div>
-</footer>
+
+  <!-- FOOTER -->
+  <?php include __DIR__ . '/../../footer.php'; ?>
 
   <script src="/AchatsEnLigne/client/utilitaires/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -1,3 +1,6 @@
+<?php
+header('Content-Type: text/css');
+?>
 <style>
 
 
@@ -88,13 +91,14 @@
         width: 100%;
         height: 450px; /* Ajuste la hauteur ici */
         overflow: hidden;
+        display: flex;
+        align-items: center;
     }
 
     .header-banner img {
         width: 100%;
         height: 100%;
         object-fit: cover; /* Ajuste l'image pour qu'elle prenne tout l'espace */
-        display: block;
     }
 
     /* --- CONTAINER GLOBAL --- */

@@ -19,6 +19,8 @@
         $courriel = $_POST['courriel'];
         $sexe = $_POST['sexe'];
         $datenaissance = $_POST['datenaissance'];
+        $mdp = $_POST['pass'];
+        $confirm_mdp = $_POST['confirm_pass'];
 
         $requete = $bd->prepare("INSERT INTO membres(nom, prenom, courriel, sexe, datenaissance) VALUES (:nom, :prenom, :courriel, :sexe, :datenaissance)");
         $requete->execute(array(
@@ -31,8 +33,9 @@
 
         $last_idm = $bd->lastInsertId();
 
-        header("Location: creerMdp.php?courriel=$courriel&idm=$last_idm");
-        exit();
+        $hashMdp = password_hash($mdp, PASSWORD_DEFAULT);
+
+        header("Location: enregistrerMdp.php?courriel=$courriel&idm=$last_idm&pass=$hashMdp");
     }
 
 ?>
